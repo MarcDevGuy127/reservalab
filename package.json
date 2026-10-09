@@ -1,0 +1,23 @@
+{
+  "name": "reservalab",
+  "version": "1.0.0",
+  "description": "Um sistema de reservas de laboratórios utilizando API com Node.js e Express.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcDevGuy127/reservalab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcDevGuy127/reservalab/issues"
+  },
+  "homepage": "https://github.com/MarcDevGuy127/reservalab#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
