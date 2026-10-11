@@ -51,7 +51,7 @@ Now I am studing how to handle errors, API structure and how to integrate it wit
 │   │   └── app.js
 │   │
 │   ├── package.json
-│   └── Dockerfile
+│   └── Dockerfile          --computador virtual para rodar o servico voltado em laboratórios
 │
 ├── reserva-service/      --servico relacionado com solicitacoes de reserva
 │   ├── src/
@@ -61,7 +61,7 @@ Now I am studing how to handle errors, API structure and how to integrate it wit
 │   │   └── app.js
 │   │
 │   ├── package.json
-│   └── Dockerfile
+│   └── Dockerfile          --computador virtual para rodar o servico voltado em reservas
 │
 ├── usuario-service/       --servico relacionado com usuarios do ReservaLab
 │   ├── src/
@@ -71,17 +71,11 @@ Now I am studing how to handle errors, API structure and how to integrate it wit
 │   │   └── app.js
 │   │
 │   ├── package.json
-│   └── Dockerfile
+│   └── Dockerfile          --computador virtual para rodar o servico voltado em usuários
 │
-└── solicitacao-service/    --servico relacionado com solicitacoes de reserva
-    ├── src/
-    │   ├── routes/
-    │   ├── controllers/
-    │   ├── services/
-    │   └── app.js
-    │
-    ├── package.json
-    └── Dockerfile`
+├── .env --senha e conexao do banco de dados
+├── package.json
+└── Dockerfile              --computador virtual para rodar todos os serviços`
 
 # ▶️ Running the project
 
