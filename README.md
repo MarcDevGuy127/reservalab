@@ -41,8 +41,7 @@ Now I am studing how to handle errors, API structure and how to integrate it wit
 
 # Structure (In Progress)
 
-<img width="859" height="671" alt="image" src="https://github.com/user-attachments/assets/4f1797e1-be96-49e2-8c88-c7ff5913ff44" />
-
+<img width="858" height="681" alt="image" src="https://github.com/user-attachments/assets/f4e87f3b-7daf-4f19-8259-a71fa867a69c" />
 
 # ▶️ Running the project
 
