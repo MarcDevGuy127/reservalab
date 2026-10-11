@@ -41,41 +41,8 @@ Now I am studing how to handle errors, API structure and how to integrate it wit
 
 # Structure (In Progress)
 
-`reservalab/
-│
-├── laboratorio-service/
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── controllers/
-│   │   ├── services/
-│   │   └── app.js
-│   │
-│   ├── package.json
-│   └── Dockerfile          --computador virtual para rodar o servico voltado em laboratórios
-│
-├── reserva-service/      --servico relacionado com solicitacoes de reserva
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── controllers/
-│   │   ├── services/
-│   │   └── app.js
-│   │
-│   ├── package.json
-│   └── Dockerfile          --computador virtual para rodar o servico voltado em reservas
-│
-├── usuario-service/       --servico relacionado com usuarios do ReservaLab
-│   ├── src/
-│   │   ├── routes/
-│   │   ├── controllers/
-│   │   ├── services/
-│   │   └── app.js
-│   │
-│   ├── package.json
-│   └── Dockerfile          --computador virtual para rodar o servico voltado em usuários
-│
-├── .env --senha e conexao do banco de dados
-├── package.json
-└── Dockerfile              --computador virtual para rodar todos os serviços`
+<img width="859" height="671" alt="image" src="https://github.com/user-attachments/assets/4f1797e1-be96-49e2-8c88-c7ff5913ff44" />
+
 
 # ▶️ Running the project
 
