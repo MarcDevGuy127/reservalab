@@ -10,4 +10,6 @@ router.get('/:id', laboratorioController.buscarPorId);
 
 router.post('/', laboratorioController.cadastrar);
 
+router.put('/:id', laboratorioController.atualizar);
+
 module.exports = router;

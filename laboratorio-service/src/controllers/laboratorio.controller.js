@@ -35,9 +35,26 @@ function cadastrar(req, res) {
     res.status(201).json(laboratorio);
 }
 
+// função para atualizar laboratório
+function atualizar(req, res) {
+    const id = parseInt(req.params.id);
+    const { nome } = req.body;
+
+    const laboratorio = laboratorioService.atualizar(id, nome);
+
+    if (!laboratorio) {
+        return res
+            .status(404)
+            .json({ mensagem: 'Laboratório não encontrado' })
+    }
+
+    res.json(laboratorio);
+}
+
 // exportando funções
 module.exports = {
     listar,
     buscarPorId,
-    cadastrar
+    cadastrar,
+    atualizar
 };

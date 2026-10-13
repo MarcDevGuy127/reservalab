@@ -35,21 +35,25 @@ function cadastrar(nome) {
     return novoLaboratorio;
 }
 
-function atualizar(nome) {
+function atualizar(id, nome) {
 
-    const novoLaboratorio = {
-        id: laboratorios.length + 1,
-        nome: nome
-    };
+    const laboratorio = laboratorios.find(
+        laboratorio => laboratorio.id === id
+    );
 
-    laboratorios.push(novoLaboratorio);
+    if (!laboratorio) {
+        return null;
+    }
 
-    return novoLaboratorio;
+    laboratorio.nome = nome;
+
+    return laboratorio;
 }
 
 // exportando funções
 module.exports = {
     listar,
     buscarPorId,
-    cadastrar
+    cadastrar,
+    atualizar
 };
