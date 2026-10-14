@@ -1,13 +1,16 @@
 const Usuario = require('../models/Usuario');
 
+// função listar usuário
 async function listar() {
     return await Usuario.find();
 }
 
+// função consultar usuário por id
 async function buscarPorId(id) {
     return await Usuario.findById(id);
 }
 
+// função cadastrar usuário
 async function cadastrar(dados) {
     const novoUsuario = await Usuario.create({
         nome: dados.nome,
@@ -20,6 +23,7 @@ async function cadastrar(dados) {
     return novoUsuario;
 }
 
+// função atualizar usuário
 async function atualizarDadosCadastrais(id, dados) {
     const camposPermitidos = {};
 
@@ -33,6 +37,7 @@ async function atualizarDadosCadastrais(id, dados) {
     );
 }
 
+// função alterar pefil e permissão do usuário
 async function alterarPerfilEPermissao(id, dados) {
     const camposPermissao = {};
 
@@ -46,11 +51,13 @@ async function alterarPerfilEPermissao(id, dados) {
     );
 }
 
+// função deletar usuário
 async function deletar(id) {
     const resultado = await Usuario.findByIdAndDelete(id);
     return Boolean(resultado);
 }
 
+// exportando funções
 module.exports = {
     listar,
     buscarPorId,
