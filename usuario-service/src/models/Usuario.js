@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 
 const usuarioSchema = new mongoose.Schema({
@@ -8,10 +7,30 @@ const usuarioSchema = new mongoose.Schema({
         trim: true
     },
 
+    ra: {
+        type: Number,
+        required: true,
+        unique: true
+    },
+
     email: {
         type: String,
         required: true,
+        unique: true,
+        lowercase: true,
         trim: true
+    },
+
+    role: {
+        type: String,
+        enum: ['Professor', 'Infraestrutura', 'Coordenador'],
+        default: 'Professor',
+        required: true
+    },
+
+    ativo: {
+        type: Boolean,
+        default: true
     }
 }, {
     timestamps: true

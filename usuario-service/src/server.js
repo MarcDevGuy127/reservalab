@@ -1,7 +1,14 @@
-const app = require('./app'); //  isso é uma função
-const PORT = process.env.PORT || 8080; // porta que o projeto é executado
+require('dotenv').config({
+    path: require('path').resolve(__dirname, '../../atlas-credentials.env')
+});
 
-// Informa link e execução da api
-app.listen(PORT, () => {
-    console.log(`API rodando com sucesso em: http://localhost:${PORT}`);
+const app = require('./app');
+const conectarBanco = require('./config/database');
+
+const PORT = process.env.PORT || 8081;
+
+conectarBanco().then(() => {
+    app.listen(PORT, () => {
+        console.log(`API rodando com sucesso em: http://localhost:${PORT}`);
+    });
 });

@@ -1,47 +1,61 @@
-let usuarios = [
-    {
-        id: 1,
-        nome: 'Usuário 1',
-        email: 'usuario1@email.com'
-    },
-    {
-        id: 2,
-        nome: 'Usuário 2',
-        email: 'usuario2@email.com'
-    }
-];
+const Usuario = require('../models/Usuario');
 
-// função listar
-function listar() {
-    return usuarios;
+async function listar() {
+    return await Usuario.find();
 }
 
-// função buscar laboratório por id
-function buscarPorId(id) {
+async function buscarPorId(id) {
+    return await Usuario.findById(id);
+}
 
-    return usuarios.find(
-        usuario => usuario.id === id
+async function cadastrar(dados) {
+    const novoUsuario = await Usuario.create({
+        nome: dados.nome,
+        ra: dados.ra,
+        email: dados.email,
+        role: dados.role || 'Professor',
+        ativo: dados.ativo !== undefined ? dados.ativo : true
+    });
+
+    return novoUsuario;
+}
+
+async function atualizarDadosCadastrais(id, dados) {
+    const camposPermitidos = {};
+
+    if (dados.nome) camposPermitidos.nome = dados.nome;
+    if (dados.email) camposPermitidos.email = dados.email;
+
+    return await Usuario.findByIdAndUpdate(
+        id,
+        camposPermitidos,
+        { new: true, runValidators: true }
     );
 }
 
-function atualizar(id, nome) {
+async function alterarPerfilEPermissao(id, dados) {
+    const camposPermissao = {};
 
-    const usuario = usuarios.find(
-        usuario => usuario.id === id
+    if (dados.role) camposPermissao.role = dados.role;
+    if (dados.ativo !== undefined) camposPermissao.ativo = dados.ativo;
+
+    return await Usuario.findByIdAndUpdate(
+        id,
+        camposPermissao,
+        { new: true, runValidators: true }
     );
-
-    if (!usuario) {
-        return null;
-    }
-
-    usuario.nome = nome;
-
-    return usuario;
 }
 
-// exportando funções
+async function deletar(id) {
+    const resultado = await Usuario.findByIdAndDelete(id);
+    return Boolean(resultado);
+}
+
 module.exports = {
     listar,
     buscarPorId,
-    atualizar
+    cadastrar,
+    atualizarDadosCadastrais,
+    alterarPerfilEPermissao,
+    deletar
 };
