@@ -50,10 +50,26 @@ function atualizar(id, nome) {
     return laboratorio;
 }
 
+// função para deletar laboratório
+function deletar(id) {
+    const indice = laboratorios.findIndex(
+        laboratorio => laboratorio.id === id
+    );
+
+    if (indice === -1) {
+        return false;
+    }
+
+    laboratorios.splice(indice, 1);
+
+    return true;
+}
+
 // exportando funções
 module.exports = {
     listar,
     buscarPorId,
     cadastrar,
-    atualizar
+    atualizar,
+    deletar
 };

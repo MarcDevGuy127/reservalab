@@ -12,4 +12,6 @@ router.post('/', laboratorioController.cadastrar);
 
 router.put('/:id', laboratorioController.atualizar);
 
+router.delete('/:id', laboratorioController.deletar);
+
 module.exports = router;

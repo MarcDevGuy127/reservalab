@@ -9,6 +9,22 @@ function listar(req, res) {
     res.json(laboratorios);
 }
 
+// função para deletar laboratório por id
+function deletar(req, res) {
+    const id = parseInt(req.params.id);
+
+    const deletado = laboratorioService.deletar(id);
+
+    if (!deletado) {
+        return res
+            .status(404)
+            .json({ mensagem: 'Laboratório não encontrado' });
+    }
+
+    res.status(200).json({ mensagem: 'Laboratório foi deletado' })
+}
+
+
 // função para buscar laboratório por id
 function buscarPorId(req, res) {
 
@@ -22,7 +38,7 @@ function buscarPorId(req, res) {
             .json({ mensagem: 'Laboratório não encontrado' });
     }
 
-    res.json(laboratorio);
+    res.status(201).json({ mensagem: 'Laboratório deletado' });
 }
 
 // função para cadastrar laboratório
@@ -56,5 +72,6 @@ module.exports = {
     listar,
     buscarPorId,
     cadastrar,
-    atualizar
+    atualizar,
+    deletar
 };
