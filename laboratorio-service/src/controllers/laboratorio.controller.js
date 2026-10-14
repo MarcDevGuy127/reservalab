@@ -38,7 +38,7 @@ function buscarPorId(req, res) {
             .json({ mensagem: 'Laboratório não encontrado' });
     }
 
-    res.status(201).json({ mensagem: 'Laboratório deletado' });
+    res.status(201).json(laboratorio);
 }
 
 // função para cadastrar laboratório
